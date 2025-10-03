@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-3.0-blue.svg)
+![Version](https://img.shields.io/badge/version-1.0-blue.svg)
 ![Python](https://img.shields.io/badge/python-3.7+-green.svg)
 ![License](https://img.shields.io/badge/license-MIT-orange.svg)
 ![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)
@@ -48,7 +48,7 @@ def Criar_conta_dados(usuario, senha):
 
 ## 💡 A Solução
 
-O **AI Code Context Extractor** resolve isso criando um contexto JSON ultra-estruturado que:
+O **Coletor De Codigo** resolve isso criando um contexto JSON ultra-estruturado que:
 
 ✅ **Inclui instruções explícitas** para a IA manter nomenclatura exata  
 ✅ **Gera metadados ricos** (hash, linhas, estrutura de pastas)  
@@ -84,9 +84,9 @@ O **AI Code Context Extractor** resolve isso criando um contexto JSON ultra-estr
 ### 🎯 Prompts Profissionais
 
 - **Prompt inicial master** para ativar modo de alta fidelidade
-- **10+ prompts especializados** (debug, refatoração, análise, etc)
+- **Prompts especializados** (trabalho, teste, emergência, excelência)
 - **Sistema de correção** de erros de nomenclatura
-- **Modo platina** para máxima precisão
+- **Templates prontos** para diferentes situações
 
 ---
 
@@ -135,7 +135,7 @@ Uma janela se abrirá para você selecionar a pasta do seu projeto.
 ### Passo 2: Aguarde a Extração
 
 ```
-🚀 EXTRATOR DE CONTEXTO PARA IA v3.0
+🚀 EXTRATOR DE CONTEXTO PARA IA v1.0
 ============================================================
 
 📂 Escaneando: meu-projeto
@@ -162,31 +162,29 @@ Uma janela se abrirá para você selecionar a pasta do seu projeto.
 1. Abra o arquivo `contexto_ia_[nome-projeto].json`
 2. Copie **TODO** o conteúdo (Ctrl+A → Ctrl+C)
 3. Cole na IA (ChatGPT, Claude, Gemini, etc)
-4. **IMPORTANTE**: Use o prompt inicial do arquivo `PROMPT_DEFINITIVO_INICIAL.md`
+4. **IMPORTANTE**: Use um dos prompts disponíveis (veja abaixo)
 
-### Passo 4: Confirme Ativação
+### Passo 4: Escolha o Prompt Adequado
 
-A IA responderá:
+O projeto inclui **4 prompts especializados**:
 
+| Prompt | Quando Usar | Arquivo |
+|--------|-------------|---------|
+| 🎯 **Definitivo Inicial** | **SEMPRE primeiro** - Ativa modo alta fidelidade | `PROMPT_DEFINITIVO_INICIAL.md` |
+| 💼 **Trabalho** | Para tarefas do dia-a-dia | `PROMPT_TRABALHO.md` |
+| 🧪 **Teste** | Para validar se IA está calibrada | `PROMPT_TESTE.md` |
+| 🚨 **Emergência** | Quando IA comete erro de nomenclatura | `PROMPT_EMERGENCIA.md` |
+| 💎 **Excelência Máxima** | Para tarefas críticas, máxima precisão | `PROMPT_EXCELENCIA_MAXIMA.md` |
+
+**Fluxo recomendado:**
 ```
-🤖 CODEFIDELITY AI ATIVADO
-
-📋 CONTEXTO CARREGADO:
-- Projeto: meu-projeto
-- Total de arquivos: 47
-- Primeira linguagem detectada: .py
-- Hash do primeiro arquivo: a3f5d8c21bc4e9f2
-
-🔒 REGRAS INTERNALIZADAS:
-✅ Nomenclatura EXATA: Se o código tem `Criar_conta_dados`, usarei `Criar_conta_dados`
-✅ Zero modificação: NÃO mudarei snake_case ↔ camelCase ↔ PascalCase
-✅ Consulta obrigatória: Lerei "content" antes de CADA resposta
-✅ Validação por hash: Confirmarei arquivos pelo "file_hash"
-
-⚡ STATUS: PRONTO PARA MÁXIMA FIDELIDADE
+1. Cole o JSON na IA
+2. Use PROMPT_DEFINITIVO_INICIAL.md (obrigatório)
+3. Aguarde confirmação da IA
+4. Use PROMPT_TRABALHO.md para suas tarefas
+5. Se IA errar, use PROMPT_EMERGENCIA.md
+6. Para tarefas críticas, use PROMPT_EXCELENCIA_MAXIMA.md
 ```
-
-**Pronto! Agora pode pedir ajuda sem medo de alucinações!**
 
 ---
 
@@ -195,76 +193,110 @@ A IA responderá:
 ### Estrutura do Repositório
 
 ```
-📁 ai-code-context-extractor/
-├── 📄 extrair.py                          # Script principal
-├── 📄 PROMPT_DEFINITIVO_INICIAL.md        # Prompt inicial obrigatório
-├── 📄 PROMPTS_COMPLEMENTARES.md           # 10+ prompts especializados
-├── 📄 README_V2.md                        # Guia completo de uso
-├── 📄 PROMPT_TEMPLATES.md                 # Templates prontos
-├── 📄 RESUMO_MELHORIAS.md                 # Comparação V1 vs V3
+📁 Coletor_De_Codigo/
+├── 📄 extrair.py                          # ⭐ Script principal
+├── 📄 PROMPT_DEFINITIVO_INICIAL.md        # ⭐ Prompt obrigatório (use primeiro)
+├── 📄 PROMPT_TRABALHO.md                  # 💼 Para tarefas diárias
+├── 📄 PROMPT_TESTE.md                     # 🧪 Para testar calibração
+├── 📄 PROMPT_EMERGENCIA.md                # 🚨 Para corrigir erros
+├── 📄 PROMPT_EXCELENCIA_MAXIMA.md         # 💎 Para máxima precisão
 ├── 📄 README.md                           # Este arquivo
 └── 📄 LICENSE                             # Licença MIT
 ```
 
-### Arquivos de Saída
+### Como Usar os Prompts
 
-O script gera um JSON com esta estrutura:
+#### 1️⃣ PROMPT_DEFINITIVO_INICIAL.md (OBRIGATÓRIO)
 
-```json
-{
-  "_LEIA_ISTO_PRIMEIRO": {
-    "URGENTE": "Leia 'ai_instructions' antes de processar",
-    "IMPORTANTE": "Nomenclatura no 'content' é DEFINITIVA",
-    "OBRIGATORIO": "Consulte 'content' antes de CADA resposta"
-  },
-  "metadata": {
-    "project_name": "meu-projeto",
-    "total_files": 47,
-    "schema_version": "3.0"
-  },
-  "ai_instructions": {
-    "CRITICAL_INSTRUCTIONS": {
-      "naming_convention_rules": [...],
-      "forbidden_actions": [...],
-      "verification_checklist": [...]
-    }
-  },
-  "project_statistics": {
-    "summary": {...},
-    "by_file_type": {...}
-  },
-  "directory_tree": {
-    "tree": "meu-projeto/
-├── src/
-│   └── controllers/..."
-  },
-  "source_files": {
-    "files": [
-      {
-        "file_id": "file_1",
-        "path": "src/app.py",
-        "file_hash": "a3f5d8c2",
-        "lines": 145,
-        "content": "# código completo aqui"
-      }
-    ]
-  }
-}
+**Use SEMPRE primeiro** após colar o JSON:
+
+```markdown
+# Cole o conteúdo deste arquivo na IA após colar o JSON
+
+Objetivo: Ativar modo de alta fidelidade
+Duração: Uma vez por sessão
+Resposta esperada: IA confirma que entendeu as regras
+```
+
+#### 2️⃣ PROMPT_TRABALHO.md
+
+**Use para tarefas do dia-a-dia:**
+
+```markdown
+# Para cada nova tarefa, use este prompt
+
+Objetivo: Executar tarefa mantendo fidelidade
+Exemplos: Analisar código, adicionar feature, refatorar
+Resposta: IA executa seguindo protocolo de 7 etapas
+```
+
+#### 3️⃣ PROMPT_TESTE.md
+
+**Use para validar calibração:**
+
+```markdown
+# Teste se a IA está seguindo as regras corretamente
+
+Objetivo: Verificar se IA está calibrada
+Quando: Periodicamente ou após muitas interações
+Resposta: IA responde 5 testes de validação
+```
+
+#### 4️⃣ PROMPT_EMERGENCIA.md
+
+**Use quando IA errar:**
+
+```markdown
+# Use IMEDIATAMENTE quando IA mudar nomenclatura
+
+Objetivo: Corrigir erro e recalibrar
+Quando: IA usar nome errado (ex: criarConta ao invés de Criar_conta)
+Resposta: IA executa protocolo de correção em 6 passos
+```
+
+#### 5️⃣ PROMPT_EXCELENCIA_MAXIMA.md
+
+**Use para tarefas críticas:**
+
+```markdown
+# Para máxima precisão em tarefas importantes
+
+Objetivo: Zero erro, máxima validação
+Quando: Refatoração grande, código crítico, produção
+Resposta: IA executa protocolo quíntuplo de verificação
 ```
 
 ---
 
-## 🎓 Exemplos de Uso
+## 🎓 Exemplos Práticos
 
-### Exemplo 1: Análise de Função
+### Exemplo 1: Sessão Completa
 
-**Você:**
+```bash
+# 1. Gere o contexto
+python extrair.py
+
+# 2. Na IA:
+# - Cole o JSON gerado
+# - Cole PROMPT_DEFINITIVO_INICIAL.md
+# - Aguarde confirmação
+
+# 3. Para cada tarefa:
+# - Cole PROMPT_TRABALHO.md
+# - Descreva sua tarefa
+
+# 4. Se IA errar:
+# - Cole PROMPT_EMERGENCIA.md imediatamente
 ```
-Usando o prompt de trabalho:
-"Analise a função de autenticação no arquivo src/auth/login.py"
+
+### Exemplo 2: Análise de Função
+
+**Você (usando PROMPT_TRABALHO.md):**
+```
+Analise a função de autenticação no arquivo src/auth/login.py
 ```
 
-**IA (com contexto):**
+**IA responde:**
 ```
 🔍 CONSULTA REALIZADA:
 Arquivo: src/auth/login.py
@@ -276,67 +308,32 @@ Linha ~23: def Autenticar_Usuario_Sistema
 - Parâmetros: `email_usuario`, `senha_Hash`
 
 💬 RESPOSTA:
-A função `Autenticar_Usuario_Sistema` recebe `email_usuario` e `senha_Hash`...
+A função `Autenticar_Usuario_Sistema` recebe...
 
-📋 EVIDÊNCIA DO CÓDIGO:
-```python
-def Autenticar_Usuario_Sistema(email_usuario, senha_Hash):
-    if not validar_Email(email_usuario):
-        return False
-    ...
+✅ Fidelidade: 100%
 ```
 
-✅ Fidelidade: 100% ✓
+### Exemplo 3: Corrigindo Erro
+
+**IA errou e disse:**
+```
+"Vou modificar a função criarUsuario..."
 ```
 
-### Exemplo 2: Adicionar Feature
-
-**Você:**
+**Você (usando PROMPT_EMERGENCIA.md):**
 ```
-"Adicione logging na função de criar usuário"
+🚨 ERRO DE CONTEXTO
 ```
 
-**IA (com contexto):**
+**IA corrige:**
 ```
-🔍 Consultando src/user/service.py...
+🚨 ERRO DETECTADO. Vou corrigir imediatamente.
 
-📝 Nome EXATO encontrado: `Criar_Usuario_Dados`
+❌ Eu disse: criarUsuario
+✅ CORRETO: `Criar_Usuario` (consultando content...)
 
-💬 Código proposto:
-```python
-import logging
-
-def Criar_Usuario_Dados(nome, email):  # Nome mantido EXATO
-    logging.info(f"Criando usuário: {email}")
-    # ... resto do código
-```
-
-✅ Nomenclatura preservada: `Criar_Usuario_Dados`
-```
-
-### Exemplo 3: Debug de Erro
-
-**Você:**
-```
-"Tenho um NameError na linha 45 de src/main.py"
-```
-
-**IA (com contexto):**
-```
-🔍 Consultando src/main.py (hash: c9d2e8f1)...
-📝 Linha 45 do "content":
-```python
-resultado = processar_Dados(info)  # Aqui!
-```
-
-💬 PROBLEMA IDENTIFICADO:
-A função chamada é `processar_Dados` mas no arquivo
-src/utils/processor.py ela se chama `Processar_Dados`
-
-✅ CORREÇÃO (mantendo nome EXATO do arquivo de origem):
-```python
-resultado = Processar_Dados(info)  # Maiúscula no P
-```
+🔄 RESPOSTA CORRIGIDA:
+Vou modificar a função `Criar_Usuario`...
 ```
 
 ---
@@ -377,8 +374,8 @@ TAMANHO_MAXIMO_ARQUIVO = 5_000_000  # 5MB ao invés de 2MB
 
 ## 📊 Comparação: Antes vs Depois
 
-| Métrica | Sem Contexto | Com Extractor | Melhoria |
-|---------|--------------|---------------|----------|
+| Métrica | Sem Contexto | Com Coletor | Melhoria |
+|---------|--------------|-------------|----------|
 | **Taxa de erro em nomenclatura** | 42% | 5% | **88% ↓** |
 | **Alucinação de funções inexistentes** | 28% | 3% | **89% ↓** |
 | **Erro em estrutura de pastas** | 35% | 2% | **94% ↓** |
@@ -414,7 +411,7 @@ Contribuições são muito bem-vindas! 🎉
 
 ### Ideias para Contribuir
 
-- [ ] Suporte a mais linguagens de programação
+- [ ] Mais prompts especializados (debug, documentação, etc)
 - [ ] Interface web (Flask/FastAPI)
 - [ ] CLI com argumentos avançados
 - [ ] Integração com VS Code Extension
@@ -525,21 +522,6 @@ Este projeto implementa técnicas de:
 
 Este projeto está sob a licença **MIT**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-```
-MIT License
-
-Copyright (c) 2025 AI Code Context Extractor Contributors
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-[... texto completo da MIT License ...]
-```
-
 ---
 
 ## 🙏 Agradecimentos
@@ -568,16 +550,25 @@ Abra uma [issue](https://github.com/Blastoles/Coletor_De_Codigo/issues) com:
 
 - 💬 [Discussions](https://github.com/Blastoles/Coletor_De_Codigo/discussions)
 
+---
+
 ## 📈 Roadmap
 
-### v3.1 (Próxima versão)
+### v1.1 (Próxima versão)
+
+- [ ] Mais prompts especializados (debug, documentação)
+- [ ] Melhorias na interface de progresso
+- [ ] Otimização de performance
+- [ ] Correções de bugs reportados
+
+### v2.0 (Futuro)
 
 - [ ] Interface web com Flask
 - [ ] CLI com argumentos avançados
 - [ ] Suporte a configuração via `.yaml`
 - [ ] Exportar para múltiplos formatos
 
-### v4.0 (Futuro)
+### v3.0 (Futuro distante)
 
 - [ ] VS Code Extension
 - [ ] Análise de dependências automática
@@ -605,7 +596,7 @@ Abra uma [issue](https://github.com/Blastoles/Coletor_De_Codigo/issues) com:
 
 ## 🎉 Conclusão
 
-O **AI Code Context Extractor** transforma a forma como você interage com IAs de código, garantindo:
+O **Coletor De Codigo** transforma a forma como você interage com IAs de código, garantindo:
 
 ✅ **Fidelidade 100%** à nomenclatura do seu código  
 ✅ **Redução de 99.7%** em alucinações  
@@ -617,7 +608,7 @@ O **AI Code Context Extractor** transforma a forma como você interage com IAs d
 
 ```bash
 git clone https://github.com/Blastoles/Coletor_De_Codigo.git
-cd ai-code-context-extractor
+cd Coletor_De_Codigo
 python extrair.py
 ```
 
@@ -629,10 +620,10 @@ python extrair.py
 
 **Se este projeto te ajudou, considere dar uma ⭐!**
 
-[![Star History Chart](https://api.star-history.com/svg?repos=blastoles/Coletor_De_Codigo&type=Date)](https://star-history.com/blastoles/Coletor_De_Codigo&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=blastoles/Coletor_De_Codigo&type=Date)](https://star-history.com/#blastoles/Coletor_De_Codigo&Date)
 
 Feito com ❤️ pela comunidade de desenvolvedores
 
-[⬆ Voltar ao topo](#Coletor_De_Codigo)
+[⬆ Voltar ao topo](#-coletor-de-codigo)
 
 </div>
