@@ -8,6 +8,8 @@
 ![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)
 ![Status](https://img.shields.io/badge/status-active-success.svg)
 
+
+
 **Extraia o contexto completo do seu projeto e elimine alucinações de IA em 99.7%**
 
 [Características](#-características) •
